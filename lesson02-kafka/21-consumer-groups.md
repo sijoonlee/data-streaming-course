@@ -1,0 +1,11 @@
+## Consumer Groups
+- group is is required
+- Consumer groups are clients consuming from the same topic
+- Kafka uses the consumer group id to assign partitions to specific consumers within the consumer group
+    - a partition can send messages to only one consumer at a time
+    - one consumer can get messages from mulitiple partitions
+    - if there is only one partition in topic, only one consumer will do the job even when there are several other consumers in the group
+- rebalancing
+    - Consumer groups increase fault tolerance and resiliency by automatically redistributing partition assignments if one or more members of the consumer group fail.
+    - consumer group leader will reassign partitions to the other consumers in the group
+    - consuming process will halt when rebalancing

@@ -1,0 +1,1 @@
+![image](./image/kafka-store-data-on-disk.png)
