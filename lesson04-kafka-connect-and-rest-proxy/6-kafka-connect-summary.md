@@ -9,6 +9,6 @@ In this section you learned:
 - Kafka Connect has an extensive REST API for managing and creating Connectors
 
 ## Kafka Connect Connectors - Optional Further Research
-[Confluent Connector Hub](https://www.confluent.io/hub/?_ga=2.42557541.1345547963.1563205519-78292278.1561645529)
-[List of core Connectors included with most distributions](https://docs.confluent.io/current/connect/managing/connectors.html)
+[Confluent Connector Hub](https://www.confluent.io/hub/?_ga=2.42557541.1345547963.1563205519-78292278.1561645529)  
+[List of core Connectors included with most distributions](https://docs.confluent.io/current/connect/managing/connectors.html)  
 [Connect REST API Documentation](https://docs.confluent.io/current/connect/references/restapi.html)
