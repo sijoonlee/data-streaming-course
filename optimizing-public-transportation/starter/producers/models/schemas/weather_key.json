@@ -1,7 +1,7 @@
 {
-  "namespace": "com.udacity",
   "type": "record",
   "name": "weather.key",
+  "namespace": "com.udacity",
   "fields": [
     {
       "name": "timestamp",
