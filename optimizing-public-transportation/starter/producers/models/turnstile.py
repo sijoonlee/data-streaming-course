@@ -36,7 +36,7 @@ class Turnstile(Producer):
         #
         #
         super().__init__(
-            f"project1.{station_name}.turnstile", # TODO: Come up with a better topic name
+            f"project1.turnstile.{station_name}", # TODO: Come up with a better topic name
             key_schema=Turnstile.key_schema,
             value_schema=Turnstile.value_schema, # TODO: Uncomment once schema is defined
             num_partitions=10, # TODO: num_partitions=???,

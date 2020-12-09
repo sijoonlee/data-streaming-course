@@ -39,7 +39,7 @@ class Producer:
         #
         self.broker_properties = {
             "client.id": "project1",
-            'bootstrap.servers':'PLAINTEXT://localhost:9092,PLAINTEXT://localhost:9093,PLAINTEXT://localhost:9094',
+            'bootstrap.servers':'PLAINTEXT://localhost:9092', #,PLAINTEXT://localhost:9093,PLAINTEXT://localhost:9094
             'schema.registry.url':'http://localhost:8081'
         }
 
@@ -65,7 +65,16 @@ class Producer:
         #
         #
         # logger.info("topic creation kafka integration incomplete - skipping")
-        futures = AdminClient({"bootstrap.servers": self.broker_properties["bootstrap.servers"]}).create_topics(
+        logger.info("Try to create topic :" + self.topic_name)
+
+        client = AdminClient({"bootstrap.servers": self.broker_properties["bootstrap.servers"]})
+        
+        topic_metadata = client.list_topics()
+        if topic_metadata.topics.get(self.topic_name) is not None:
+            logger.info("Topic already exists")
+            return
+
+        futures = client.create_topics(
             [
                 NewTopic(
                     topic=self.topic_name,

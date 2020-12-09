@@ -33,7 +33,8 @@ class Station(Producer):
 
         # TODO: Complete the below by deciding on a topic name, number of partitions, and number of
         # replicas
-        topic_name = f"project1.{station_name}.arrival" # TODO: Come up with a better topic name
+        # topic_name = f"project1.{station_name}.arrival" # TODO: Come up with a better topic name
+        topic_name = f"project1.arrival" # TODO: Come up with a better topic name
         super().__init__(
             topic_name,
             key_schema=Station.key_schema,
@@ -55,6 +56,8 @@ class Station(Producer):
         """Simulates train arrivals at this station"""
         # TODO: Complete this function by producing an arrival message to Kafka
         # logger.info("arrival kafka integration incomplete - skipping")
+        # logger.info("prev_station_id: " + 'null' if prev_station_id == None else prev_station_id)
+        # logger.info("prev_direction: " + 'null' if prev_direction == None else prev_direction)
         self.producer.produce(
            topic=self.topic_name,
            key={"timestamp": self.time_millis()},
@@ -69,6 +72,7 @@ class Station(Producer):
                 "prev_direction": prev_direction
            },
         )
+        logging.info("station.py run")
 
     def __str__(self):
         return "Station | {:^5} | {:<30} | Direction A: | {:^5} | departing to {:<30} | Direction B: | {:^5} | departing to {:<30} | ".format(
