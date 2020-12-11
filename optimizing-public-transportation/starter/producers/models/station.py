@@ -33,8 +33,8 @@ class Station(Producer):
 
         # TODO: Complete the below by deciding on a topic name, number of partitions, and number of
         # replicas
-        # topic_name = f"project1.{station_name}.arrival" # TODO: Come up with a better topic name
-        topic_name = f"project1.arrival" # TODO: Come up with a better topic name
+        # topic_name = f"project1.arrival.{station_name}" # TODO: Come up with a better topic name
+        topic_name = "org.chicago.cta.station.arrivals.v1" # TODO: Come up with a better topic name
         super().__init__(
             topic_name,
             key_schema=Station.key_schema,
