@@ -1,0 +1,93 @@
+2020-12-15 09:12:57 INFO  SharedState:54 - Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir ('file:/home/workspace/spark-warehouse/').
+2020-12-15 09:12:57 INFO  SharedState:54 - Warehouse path is 'file:/home/workspace/spark-warehouse/'.
+2020-12-15 09:12:57 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@1fcdcf22{/SQL,null,AVAILABLE,@Spark}
+2020-12-15 09:12:57 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@c8be4f1{/SQL/json,null,AVAILABLE,@Spark}
+2020-12-15 09:12:57 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@5c27cac3{/SQL/execution,null,AVAILABLE,@Spark}
+2020-12-15 09:12:57 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@76b76c65{/SQL/execution/json,null,AVAILABLE,@Spark}
+2020-12-15 09:12:57 INFO  ContextHandler:781 - Started o.s.j.s.ServletContextHandler@799e9aa0{/static/sql,null,AVAILABLE,@Spark}
+2020-12-15 09:12:57 INFO  StateStoreCoordinatorRef:54 - Registered StateStoreCoordinator endpoint
+2020-12-15 09:13:01 INFO  FileSourceStrategy:54 - Pruning directories with: 
+2020-12-15 09:13:01 INFO  FileSourceStrategy:54 - Post-Scan Filters: 
+2020-12-15 09:13:01 INFO  FileSourceStrategy:54 - Output Data Schema: struct<value: string>
+2020-12-15 09:13:01 INFO  FileSourceScanExec:54 - Pushed Filters: 
+2020-12-15 09:13:02 INFO  CodeGenerator:54 - Code generated in 344.504788 ms
+2020-12-15 09:13:02 INFO  MemoryStore:54 - Block broadcast_0 stored as values in memory (estimated size 277.5 KB, free 366.0 MB)
+2020-12-15 09:13:02 INFO  MemoryStore:54 - Block broadcast_0_piece0 stored as bytes in memory (estimated size 23.3 KB, free 366.0 MB)
+2020-12-15 09:13:02 INFO  BlockManagerInfo:54 - Added broadcast_0_piece0 in memory on 513b08893cfd:33037 (size: 23.3 KB, free: 366.3 MB)
+2020-12-15 09:13:02 INFO  SparkContext:54 - Created broadcast 0 from json at NativeMethodAccessorImpl.java:0
+2020-12-15 09:13:02 INFO  FileSourceScanExec:54 - Planning scan with bin packing, max size: 4243303 bytes, open cost is considered as scanning 4194304 bytes.
+2020-12-15 09:13:02 INFO  SparkContext:54 - Starting job: json at NativeMethodAccessorImpl.java:0
+2020-12-15 09:13:02 INFO  DAGScheduler:54 - Got job 0 (json at NativeMethodAccessorImpl.java:0) with 1 output partitions
+2020-12-15 09:13:02 INFO  DAGScheduler:54 - Final stage: ResultStage 0 (json at NativeMethodAccessorImpl.java:0)
+2020-12-15 09:13:02 INFO  DAGScheduler:54 - Parents of final stage: List()
+2020-12-15 09:13:02 INFO  DAGScheduler:54 - Missing parents: List()
+2020-12-15 09:13:02 INFO  DAGScheduler:54 - Submitting ResultStage 0 (MapPartitionsRDD[3] at json at NativeMethodAccessorImpl.java:0), which has no missing parents
+2020-12-15 09:13:02 INFO  MemoryStore:54 - Block broadcast_1 stored as values in memory (estimated size 9.5 KB, free 366.0 MB)
+2020-12-15 09:13:02 INFO  MemoryStore:54 - Block broadcast_1_piece0 stored as bytes in memory (estimated size 5.2 KB, free 366.0 MB)
+2020-12-15 09:13:02 INFO  BlockManagerInfo:54 - Added broadcast_1_piece0 in memory on 513b08893cfd:33037 (size: 5.2 KB, free: 366.3 MB)
+2020-12-15 09:13:02 INFO  SparkContext:54 - Created broadcast 1 from broadcast at DAGScheduler.scala:1039
+2020-12-15 09:13:02 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at json at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+2020-12-15 09:13:02 INFO  TaskSchedulerImpl:54 - Adding task set 0.0 with 1 tasks
+2020-12-15 09:13:03 INFO  TaskSetManager:54 - Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 8319 bytes)
+2020-12-15 09:13:03 INFO  Executor:54 - Running task 0.0 in stage 0.0 (TID 0)
+2020-12-15 09:13:03 INFO  Executor:54 - Fetching file:/home/workspace/solution_example_spark_streaming.py with timestamp 1608023576482
+2020-12-15 09:13:03 INFO  Utils:54 - /home/workspace/solution_example_spark_streaming.py has been previously copied to /tmp/spark-a2d11430-ef8d-4e81-9404-ec04f637fe72/userFiles-90fca017-e2e7-4cc4-bc1e-9ae804a552bd/solution_example_spark_streaming.py
+2020-12-15 09:13:03 INFO  FileScanRDD:54 - Reading File path: file:///home/workspace/resources/lesson1/json/data.txt, range: 0-48999, partition values: [empty row]
+2020-12-15 09:13:03 INFO  CodeGenerator:54 - Code generated in 48.286187 ms
+2020-12-15 09:13:03 INFO  Executor:54 - Finished task 0.0 in stage 0.0 (TID 0). 1961 bytes result sent to driver
+2020-12-15 09:13:03 INFO  TaskSetManager:54 - Finished task 0.0 in stage 0.0 (TID 0) in 652 ms on localhost (executor driver) (1/1)
+2020-12-15 09:13:03 INFO  DAGScheduler:54 - ResultStage 0 (json at NativeMethodAccessorImpl.java:0) finished in 0.814 s
+2020-12-15 09:13:03 INFO  TaskSchedulerImpl:54 - Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2020-12-15 09:13:03 INFO  DAGScheduler:54 - Job 0 finished: json at NativeMethodAccessorImpl.java:0, took 0.913872 s
+2020-12-15 09:13:03 INFO  FileSourceStrategy:54 - Pruning directories with: 
+2020-12-15 09:13:03 INFO  FileSourceStrategy:54 - Post-Scan Filters: 
+2020-12-15 09:13:03 INFO  FileSourceStrategy:54 - Output Data Schema: struct<status: string, timestamp: bigint>
+2020-12-15 09:13:03 INFO  FileSourceScanExec:54 - Pushed Filters: 
+2020-12-15 09:13:03 INFO  CodeGenerator:54 - Code generated in 30.252667 ms
+2020-12-15 09:13:03 INFO  CodeGenerator:54 - Code generated in 27.112152 ms
+2020-12-15 09:13:04 INFO  MemoryStore:54 - Block broadcast_2 stored as values in memory (estimated size 277.5 KB, free 365.7 MB)
+2020-12-15 09:13:04 INFO  MemoryStore:54 - Block broadcast_2_piece0 stored as bytes in memory (estimated size 23.3 KB, free 365.7 MB)
+2020-12-15 09:13:04 INFO  BlockManagerInfo:54 - Added broadcast_2_piece0 in memory on 513b08893cfd:33037 (size: 23.3 KB, free: 366.2 MB)
+2020-12-15 09:13:04 INFO  SparkContext:54 - Created broadcast 2 from showString at NativeMethodAccessorImpl.java:0
+2020-12-15 09:13:04 INFO  FileSourceScanExec:54 - Planning scan with bin packing, max size: 4243303 bytes, open cost is considered as scanning 4194304 bytes.
+2020-12-15 09:13:04 INFO  SparkContext:54 - Starting job: showString at NativeMethodAccessorImpl.java:0
+2020-12-15 09:13:04 INFO  DAGScheduler:54 - Got job 1 (showString at NativeMethodAccessorImpl.java:0) with 1 output partitions
+2020-12-15 09:13:04 INFO  DAGScheduler:54 - Final stage: ResultStage 1 (showString at NativeMethodAccessorImpl.java:0)
+2020-12-15 09:13:04 INFO  DAGScheduler:54 - Parents of final stage: List()
+2020-12-15 09:13:04 INFO  DAGScheduler:54 - Missing parents: List()
+2020-12-15 09:13:04 INFO  DAGScheduler:54 - Submitting ResultStage 1 (MapPartitionsRDD[7] at showString at NativeMethodAccessorImpl.java:0), which has no missing parents
+2020-12-15 09:13:04 INFO  MemoryStore:54 - Block broadcast_3 stored as values in memory (estimated size 10.7 KB, free 365.7 MB)
+2020-12-15 09:13:04 INFO  MemoryStore:54 - Block broadcast_3_piece0 stored as bytes in memory (estimated size 5.6 KB, free 365.7 MB)
+2020-12-15 09:13:04 INFO  BlockManagerInfo:54 - Added broadcast_3_piece0 in memory on 513b08893cfd:33037 (size: 5.6 KB, free: 366.2 MB)
+2020-12-15 09:13:04 INFO  SparkContext:54 - Created broadcast 3 from broadcast at DAGScheduler.scala:1039
+2020-12-15 09:13:04 INFO  DAGScheduler:54 - Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[7] at showString at NativeMethodAccessorImpl.java:0) (first 15 tasks are for partitions Vector(0))
+2020-12-15 09:13:04 INFO  TaskSchedulerImpl:54 - Adding task set 1.0 with 1 tasks
+2020-12-15 09:13:04 INFO  TaskSetManager:54 - Starting task 0.0 in stage 1.0 (TID 1, localhost, executor driver, partition 0, PROCESS_LOCAL, 8319 bytes)
+2020-12-15 09:13:04 INFO  Executor:54 - Running task 0.0 in stage 1.0 (TID 1)
+2020-12-15 09:13:04 INFO  FileScanRDD:54 - Reading File path: file:///home/workspace/resources/lesson1/json/data.txt, range: 0-48999, partition values: [empty row]
+2020-12-15 09:13:04 INFO  CodeGenerator:54 - Code generated in 23.658029 ms
+2020-12-15 09:13:04 INFO  Executor:54 - Finished task 0.0 in stage 1.0 (TID 1). 1385 bytes result sent to driver
+2020-12-15 09:13:04 INFO  TaskSetManager:54 - Finished task 0.0 in stage 1.0 (TID 1) in 89 ms on localhost (executor driver) (1/1)
+2020-12-15 09:13:04 INFO  TaskSchedulerImpl:54 - Removed TaskSet 1.0, whose tasks have all completed, from pool 
+2020-12-15 09:13:04 INFO  DAGScheduler:54 - ResultStage 1 (showString at NativeMethodAccessorImpl.java:0) finished in 0.130 s
+2020-12-15 09:13:04 INFO  DAGScheduler:54 - Job 1 finished: showString at NativeMethodAccessorImpl.java:0, took 0.148883 s
++---------+----------+
+|status   |timestamp |
++---------+----------+
+|Processed|1563427686|
+|Processed|1541988211|
+|Processed|1566990047|
+|Processed|1550359015|
+|Processed|1532826960|
+|Processed|1567301507|
+|Processed|1565662419|
+|Processed|1562527535|
+|Processed|1534753658|
+|Processed|1555582901|
++---------+----------+
+only showing top 10 rows
+
+2020-12-15 09:13:04 INFO  MicroBatchExecution:54 - Starting counts [id = 5c9b54b0-a67c-4a40-b54c-edbdfc8012f2, runId = da5c3d32-e18c-450d-af3d-fcbfc72e7c39]. Use file:///tmp/temporary-2b669d42-20b2-47ae-9faf-593c1a101976 to store the query checkpoint.
+2020-12-15 09:13:04 INFO  FileStreamSourceLog:54 - Set the compact interval to 10 [defaultCompactInterval: 10]
+2020-12-15 09:13:04 INFO  FileStreamSource:54 - maxFilesPerBatch = Some(1), maxFileAgeMs = 604800000
+2020-12-15 09:13:04 INFO  SparkContext:54 - Invoking stop() from shutdown hook

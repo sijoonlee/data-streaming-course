@@ -55,23 +55,24 @@ table = app.Table(
 @app.agent(topic)
 async def stream_process(stream):
 
-    logging.info(json.dumps(asdict(stream), indent=2))
-    
-    async for value in stream:
-        if value.red:
+    async for event in stream:
+        logging.info('faust stream is processing: {}'.format(event.station_id))
+        if event.red:
             line = 'red'
-        elif value.blue:
+        elif event.blue:
             line = 'blue'
-        elif value.green:
+        elif event.green:
             line = 'green'
         else:
-            logging.info("no line detected: " + stream)
+            logging.info("--- no line detected ---")
+            logging.info(event)
+            logging.info("------------------------")
             continue
 
-        table[stream.station_id] = TransformedStation(
-            station_id = stream.station_id,
-            station_name = stream.station_name,
-            order = stream.order,
+        table[event.station_id] = TransformedStation(
+            station_id = event.station_id,
+            station_name = event.station_name,
+            order = event.order,
             line = line
         )
         

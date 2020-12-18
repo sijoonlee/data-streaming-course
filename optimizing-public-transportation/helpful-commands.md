@@ -12,7 +12,7 @@ sudo docker exec -it starter_kafka0_1 bash -rm
 
 kafka-console-producer --topic quickstart-events --broker-list localhost:9092
 kafka-console-consumer --bootstrap-server localhost:9092 --topic quickstart-events
-
+org.chicago.cta.stations.table.v1
 # List all subjects
 `curl -X GET http://localhost:8081/subjects`
 
@@ -46,8 +46,14 @@ kafka-console-consumer --bootstrap-server localhost:9092 --topic quickstart-even
 # delete wrong connector
 `curl -X DELETE localhost:8083/connectors/stations`
 
+# list all connectors
+curl -X GET http://localhost:8083/
+# get info connector stations
+curl -X GET http://localhost:8083/connectors/stations
 
-curl -X PUT http://localhost:8083/admin/loggers/io.confluent \
+curl -X GET http://localhost:8083/connectors/stations/status
+
+curl -X PUT http://localhost:8083/admin/loggers \
      -H "Content-Type:application/json" -d '{"level": "TRACE"}'
 
 curl -X PUT http://localhost:8083/admin/loggers/io.confluent.connect.jdbc.dialect.DatabaseDialects \

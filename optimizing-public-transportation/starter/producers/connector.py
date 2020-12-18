@@ -56,7 +56,7 @@ def configure_connector():
                # Frequency in ms to poll for new data in each table.
                "poll.interval.ms": "10000"
            }
-       }),
+       })
     )
 
     ## Ensure a healthy response was given
