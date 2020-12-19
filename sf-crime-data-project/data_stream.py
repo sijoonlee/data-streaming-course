@@ -6,7 +6,37 @@ import pyspark.sql.functions as psf
 
 
 # TODO Create a schema for incoming resources
+# {
+#     "crime_id": "183653763",
+#     "original_crime_type_name": "Traffic Stop",
+#     "report_date": "2018-12-31T00:00:00.000",
+#     "call_date": "2018-12-31T00:00:00.000",
+#     "offense_date": "2018-12-31T00:00:00.000",
+#     "call_time": "23:57",
+#     "call_date_time": "2018-12-31T23:57:00.000",
+#     "disposition": "ADM",
+#     "address": "Geary Bl/divisadero St",
+#     "city": "San Francisco",
+#     "state": "CA",
+#     "agency_id": "1",
+#     "address_type": "Intersection",
+#     "common_location": ""
+# },
 schema = StructType([
+    StructField('crime_id', LongType(), False),
+    StructField('original_crime_type_name', StringType(), False),
+    StructField('report_date', TimestampType(), False),
+    StructField('call_date', TimestampType(), False),
+    StructField('offense_date', TimestampType(), False),
+    StructField('call_time', StringType(), False),
+    StructField('call_date_time', TimestampType(), False),
+    StructField('disposition', StringType(), False),
+    StructField('address', StringType(), False),
+    StructField('city', StringType(), False),
+    StructField('state', StringType(), False),
+    StructField('agency_id', IntegerType(), False),
+    StructField('address_type', StringType(), False),
+    StructField('common_location', StringType(), True)
 ])
 
 def run_spark_job(spark):
@@ -16,34 +46,63 @@ def run_spark_job(spark):
     # set up correct bootstrap server and port
     df = spark \
         .readStream \
+        .format("kafka") \
+        .option('kafka.bootstrap.servers','localhost:9092') \
+        .option('subscribe', 'sf.police.calls') \
+        .option('startingOffsets', 'earliest') \
+        .option('maxOffsetsPerTrigger', 10) \
+        .option('maxRatePerPartition', 10) \
+        .option('stopGracefullyOnShutdown', "true") \
+        .load()
+
 
     # Show schema for the incoming resources for checks
     df.printSchema()
 
     # TODO extract the correct column from the kafka input resources
     # Take only value and convert it to String
-    kafka_df = df.selectExpr("")
+    kafka_df = df.selectExpr("CAST(value AS STRING)")
 
     service_table = kafka_df\
         .select(psf.from_json(psf.col('value'), schema).alias("DF"))\
         .select("DF.*")
 
     # TODO select original_crime_type_name and disposition
-    distinct_table = 
+    # distinct_table = service_table \
+    #     .select('call_date_time', 'original_crime_type_name', 'disposition') \
+    #     .distinct() \
+    #     .withWatermark('call_date_time', '3 minutes')
+    distinct_table = service_table \
+        .select("original_crime_type_name", "disposition") \
+        .distinct() \
 
     # count the number of original crime type
-    agg_df = 
+    # agg_df = distinct_table.groupBy("original_crime_type_name", "disposition").count()
+
+    agg_df = distinct_table \
+        .dropna() \
+        .select('original_crime_type_name') \
+        .groupby('original_crime_type_name') \
+        .count() \
+        .orderBy("count", ascending=True)
+        # .agg({'original_crime_type_name': 'count'}) \
+        # .orderBy('count(original_crime_type_name)', ascending=True)
+    
 
     # TODO Q1. Submit a screen shot of a batch ingestion of the aggregation
     # TODO write output stream
+    
     query = agg_df \
-
+        .writeStream \
+        .outputMode('Complete') \
+        .format('console') \
+        .start()
 
     # TODO attach a ProgressReporter
     query.awaitTermination()
 
     # TODO get the right radio code json path
-    radio_code_json_filepath = ""
+    radio_code_json_filepath = "./radio_code.json"
     radio_code_df = spark.read.json(radio_code_json_filepath)
 
     # clean up your data so that the column names match on radio_code_df and agg_df
@@ -53,10 +112,16 @@ def run_spark_job(spark):
     radio_code_df = radio_code_df.withColumnRenamed("disposition_code", "disposition")
 
     # TODO join on disposition column
-    join_query = agg_df.
+    # https://spark.apache.org/docs/latest/api/python/pyspark.sql.html?highlight=join
+    join_query = distinct_table.join(radio_code_df, col('agg_df.disposition') == col('radio_code_df.disposition'), 'left')
 
-
-    join_query.awaitTermination()
+    join_query \
+        .writeStream \
+        .format('console') \
+        .outputMode('Complete') \
+        .trigger(processingTime="1 minutes") \
+        .start() \
+        .awaitTermination()
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 import logging
 from pyspark.sql import SparkSession
-
+# https://pypi.org/project/pyspark/
 def run_spark_job(spark):
 
     df = spark \
@@ -20,6 +20,7 @@ def run_spark_job(spark):
     agg_df = df.count()
     
     # play around with processingTime to see how the progress report changes
+    # https://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/streaming/Trigger.html#ProcessingTime-scala.concurrent.duration.Duration-
     query = agg_df \
         .writeStream \
         .trigger(processingTime="<change this>") \

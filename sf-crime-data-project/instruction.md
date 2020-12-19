@@ -1,3 +1,32 @@
+## Installation
+- scala 2.12.12
+- kafka_2.12-2.6.0
+- spark-3.0.1-bin-hadoop2.7
+- java 11
+
+## Custom configuration for Kafka
+- create folder `data/kafka` and `data/zookeeper` under kafka-installed dir(ex. kafka_2.12-2.6.0)
+- edit /kafka_2.12-2.6.0/config/server.properties  
+`log.dirs=/some/path/kafka_2.12-2.6.0/data/kafka`
+- edit /kafka_2.12-2.6.0/config/zookeeper.properties  
+`dataDir=/some/path/kafka_2.12-2.6.0/data/zookeeper`
+
+## Start Kafka
+bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/kafka-server-start.sh config/server.properties
+
+## Check
+bin/kafka-topics.sh --list --zookeeper localhost:2181
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic> --from-beginning
+
+## Delete
+bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic <your-topic-name>
+
+
+## Kafka-python library
+- https://pypi.org/project/kafka-python/
+- pip3 install kafka-python
+
 ## Starter Code
 You can find three Python files that are starter code, the project dataset, and some other necessary resources in a zip file called "SF Crime Data Project Files" in the Resources tab in the left sidebar of your classroom:
 - producer_server.py
@@ -47,6 +76,7 @@ You can start the bootstrap server using this Python command: `python producer_s
 ## Step 1
 - The first step is to build a simple Kafka server.
 - Complete the code for the server in producer_server.py and kafka_server.py.
+
 ### Local Environment
 - To see if you correctly implemented the server, use the command below to see your output.
 ```
@@ -60,17 +90,26 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:<your-port-number> --
 - Take a screenshot of your kafka-consumer-console output. You will need to include this screenshot as part of your project submission.  
 ![img](./sample-console-output.png)
 
-
-Step 2
+## Step 2
 - Apache Spark already has an integration with Kafka brokers, so we would not normally need a separate Kafka consumer. However, we are going to ask you to create one anyway. Why? We'd like you to create the consumer to demonstrate your understanding of creating a complete Kafka Module (producer and consumer) from scratch. In production, you might have to create a dummy producer or consumer to just test out your theory and this will be great practice for that.
 - Implement all the TODO items in data_stream.py. You may need to explore the dataset beforehand using a Jupyter Notebook.
 - Do a spark-submit using this command: 
 ```
-spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_stream.py
 ```
---master local[*] data_stream.py.
 - Take a screenshot of your progress reporter after executing a Spark job. You will need to include this screenshot as part of your project submission.
 - Take a screenshot of the Spark Streaming UI as the streaming continues. You will need to include this screenshot as part of your project submission.
+
+### How to find value for option *--packages*
+- the spark-submit command above won't work since I am using different version of Spark/Kafka
+- https://docs.cloudera.com/runtime/7.2.0/running-spark-applications/topics/spark-submit-options.html
+- Comma-separated list of Maven coordinates of JARs to include on the driver and executor classpaths. The local Maven, Maven central, and remote repositories specified in repositories are searched in that order. The format for the coordinates is groupId:artifactId:version.
+- https://mvnrepository.com/artifact/org.apache.spark/spark-sql-kafka-0-10_2.12/3.0.1
+- spark-submit command that is working for me
+```
+spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 --master local[*] data_stream.py
+```
+
 
 ## Step 3
 Write the answers to these questions in the README.md doc of your GitHub repo:
@@ -81,3 +120,9 @@ Write the answers to these questions in the README.md doc of your GitHub repo:
 You will submit a link to your GitHub repo, with the files you've created: producer_server.py, kafka_server.py, data_stream.py, and consumer_server.py. The README.md doc in your GitHub repo should contain your responses to the two questions from Step 3.
 
 Your project submission should also include a zip file containing the three screenshots you've taken.
+
+
+
+
+
+

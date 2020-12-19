@@ -11,7 +11,7 @@ sudo docker exec -it starter_kafka0_1 bash -rm
 
 
 kafka-console-producer --topic quickstart-events --broker-list localhost:9092
-kafka-console-consumer --bootstrap-server localhost:9092 --topic quickstart-events
+kafka-console-consumer --bootstrap-server localhost:9092 --topic quickstart-events --from-beginning
 org.chicago.cta.stations.table.v1
 # List all subjects
 `curl -X GET http://localhost:8081/subjects`
@@ -48,6 +48,7 @@ org.chicago.cta.stations.table.v1
 
 # list all connectors
 curl -X GET http://localhost:8083/
+
 # get info connector stations
 curl -X GET http://localhost:8083/connectors/stations
 

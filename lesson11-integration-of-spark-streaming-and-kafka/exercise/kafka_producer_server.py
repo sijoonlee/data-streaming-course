@@ -20,4 +20,6 @@ class ProducerServer(KafkaProducer):
     def dict_to_binary(self, json_dict):
         return json.dumps(json_dict).encode('utf-8')
 
-
+if __name__ == "__main__":
+   ps = ProducerServer('./data/uber.json', 'practice.uber')
+   ps.generate_data()
