@@ -28,6 +28,10 @@ class ProducerServer(KafkaProducer):
 
 
 if __name__ == "__main__":
-    p = ProducerServer('police-department-calls-for-service.json','sf.police.calls')
+    p = ProducerServer(
+        input_file='police-department-calls-for-service.json',
+        topic='sf.police.calls',
+        bootstrap_servers="localhost:9092",
+        client_id="sf.police.producer")
     p.generate_data()
         
