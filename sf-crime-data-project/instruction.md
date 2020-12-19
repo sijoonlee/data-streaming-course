@@ -19,9 +19,14 @@ bin/kafka-server-start.sh config/server.properties
 bin/kafka-topics.sh --list --zookeeper localhost:2181
 bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic <topic> --from-beginning
 
-## Delete
-bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic <your-topic-name>
+## Create a topic
+kafka-topics.sh --create \
+  --zookeeper localhost:2181 \
+  --replication-factor 1 --partitions 1 \
+  --topic sf.police.calls
 
+## Delete a topic
+bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic sf.police.calls
 
 ## Kafka-python library
 - https://pypi.org/project/kafka-python/
@@ -114,7 +119,18 @@ spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 --maste
 ## Step 3
 Write the answers to these questions in the README.md doc of your GitHub repo:
 1. How did changing values on the SparkSession property parameters affect the throughput and latency of the data?
+
+not SparkSession property, but number of partitions of the Kafka topic
+maxOffsetsPerTrigger
+maxRatePerPartition
+spark.driver.memory / default 1g
+spark.executor.memory / default 1g
+spark.default.parallelism
+
+
 1. What were the 2-3 most efficient SparkSession property key/value pairs? Through testing multiple variations on values, how can you tell these were the most optimal?
+
+
 
 ## Project Submission
 You will submit a link to your GitHub repo, with the files you've created: producer_server.py, kafka_server.py, data_stream.py, and consumer_server.py. The README.md doc in your GitHub repo should contain your responses to the two questions from Step 3.
