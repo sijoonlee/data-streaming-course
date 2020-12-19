@@ -1,4 +1,5 @@
 ## Installation
+- I know this is not the installation setting that the course instructs, but I believe my codes would work for the course's setting since python code won't have difference for both settings.
 - kafka_2.12-2.6.0
     - kafka 2.6.0 doesn't support scala 2.11, but scala 2.12 and 2.13
 - spark-3.0.1-bin-hadoop2.7
