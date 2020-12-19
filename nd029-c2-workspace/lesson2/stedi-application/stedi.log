@@ -1,0 +1,367 @@
+Unable to create test user due to exception: Username already exists
+Unable to create customer due to exception: Customer already exists
+Sep 30, 2020 5:29:50 PM com.getsimplex.steptimer.service.KafkaRiskTopicConsumerActor onReceive
+INFO: Connecting to Kafka Topic: customer-risk
+Sep 30, 2020 5:29:50 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Creating Kafka Producer
+[Thread-1] INFO org.eclipse.jetty.util.log - Logging initialized @2101ms
+[websocket-akka.actor.default-dispatcher-8] INFO org.apache.kafka.clients.producer.ProducerConfig - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = STEDI
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	internal.auto.downgrade.txn.commit = false
+	key.serializer = class org.apache.kafka.common.serialization.LongSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.clients.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-STEDI-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = STEDI
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+[Thread-1] INFO spark.webserver.JettySparkServer - == Spark has ignited ...
+[Thread-1] INFO spark.webserver.JettySparkServer - >> Listening on 0.0.0.0:3000
+[Thread-1] INFO org.eclipse.jetty.server.Server - jetty-9.3.z-SNAPSHOT
+[websocket-akka.actor.default-dispatcher-8] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka version: 2.6.0
+[websocket-akka.actor.default-dispatcher-8] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: 62abe01bee039651
+[websocket-akka.actor.default-dispatcher-8] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1601486991872
+Sep 30, 2020 5:29:51 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989741","locationName":"Maryland","truckNumber":"1869","status":"In"}
+[Thread-1] INFO org.eclipse.jetty.server.handler.ContextHandler - Started o.e.j.s.ServletContextHandler@46b6323{/,null,AVAILABLE}
+[Thread-1] INFO org.eclipse.jetty.server.ServerConnector - Started ServerConnector@526ae780{HTTP/1.1,[http/1.1]}{0.0.0.0:3000}
+[Thread-1] INFO org.eclipse.jetty.server.Server - Started @3447ms
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka version: 2.6.0
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka commitId: 62abe01bee039651
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1601486992046
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.clients.consumer.KafkaConsumer - [Consumer clientId=consumer-STEDI-1, groupId=STEDI] Subscribed to topic(s): topic-you-created
+[kafka-producer-network-thread | STEDI] WARN org.apache.kafka.clients.NetworkClient - [Producer clientId=STEDI] Error while fetching metadata with correlation id 2 : {check-in=LEADER_NOT_AVAILABLE}
+[kafka-producer-network-thread | STEDI] INFO org.apache.kafka.clients.Metadata - [Producer clientId=STEDI] Cluster ID: xT-42p5gT0mScRcmYCsgkg
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-STEDI-1, groupId=STEDI] Cluster ID: xT-42p5gT0mScRcmYCsgkg
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-STEDI-1, groupId=STEDI] Discovered group coordinator 5b40143d8c92:9092 (id: 2147483647 rack: null)
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-STEDI-1, groupId=STEDI] (Re-)joining group
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-STEDI-1, groupId=STEDI] Finished assignment for group at generation 3: {consumer-STEDI-1-4e3d8cf7-89ca-4e11-b291-8fb0646c0048=Assignment(partitions=[topic-you-created-0])}
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.clients.consumer.internals.AbstractCoordinator - [Consumer clientId=consumer-STEDI-1, groupId=STEDI] Successfully joined group with generation 3
+Sep 30, 2020 5:29:55 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 84
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-STEDI-1, groupId=STEDI] Notifying assignor about the new Assignment(partitions=[topic-you-created-0])
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-STEDI-1, groupId=STEDI] Adding newly assigned partitions: topic-you-created-0
+[kafka-producer-network-thread | STEDI] WARN org.apache.kafka.clients.NetworkClient - [Producer clientId=STEDI] Error while fetching metadata with correlation id 7 : {fuel-level=LEADER_NOT_AVAILABLE}
+Sep 30, 2020 5:29:55 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Neutral
+[kafka-producer-network-thread | STEDI] WARN org.apache.kafka.clients.NetworkClient - [Producer clientId=STEDI] Error while fetching metadata with correlation id 10 : {gear-position=LEADER_NOT_AVAILABLE}
+[websocket-akka.actor.default-dispatcher-4] INFO org.apache.kafka.clients.consumer.internals.ConsumerCoordinator - [Consumer clientId=consumer-STEDI-1, groupId=STEDI] Setting offset for partition topic-you-created-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[5b40143d8c92:9092 (id: 0 rack: null)], epoch=absent}}
+Sep 30, 2020 5:29:55 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":205}
+[kafka-producer-network-thread | STEDI] WARN org.apache.kafka.clients.NetworkClient - [Producer clientId=STEDI] Error while fetching metadata with correlation id 13 : {vehicle-status=LEADER_NOT_AVAILABLE}
+Sep 30, 2020 5:29:55 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989731","locationName":"Louisiana","truckNumber":"4938","status":"In"}
+Sep 30, 2020 5:29:55 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 55
+Sep 30, 2020 5:29:55 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Reverse
+Sep 30, 2020 5:29:55 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":8002}
+Sep 30, 2020 5:29:55 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989731","locationName":"Alabama","truckNumber":"5796","status":"In"}
+Sep 30, 2020 5:29:55 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 44
+Sep 30, 2020 5:29:55 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Reverse
+Sep 30, 2020 5:29:55 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":3720}
+Sep 30, 2020 5:29:56 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989744","locationName":"Colardo","truckNumber":"5600","status":"In"}
+Sep 30, 2020 5:29:56 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 20
+Sep 30, 2020 5:29:56 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Reverse
+Sep 30, 2020 5:29:56 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":9315}
+Sep 30, 2020 5:29:58 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989696","locationName":"Florida","truckNumber":"8002","status":"In"}
+Sep 30, 2020 5:29:58 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 58
+Sep 30, 2020 5:29:58 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Neutral
+Sep 30, 2020 5:29:58 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":9237}
+Sep 30, 2020 5:30:00 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989730","locationName":"Georgia","truckNumber":"5934","status":"In"}
+Sep 30, 2020 5:30:00 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 79
+Sep 30, 2020 5:30:00 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Reverse
+Sep 30, 2020 5:30:00 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":5796}
+Sep 30, 2020 5:30:02 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486998598","locationName":"Texas","truckNumber":"8002","status":"In"}
+Sep 30, 2020 5:30:02 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: -1
+Sep 30, 2020 5:30:02 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Drive
+Sep 30, 2020 5:30:02 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":5313}
+Sep 30, 2020 5:30:04 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486990596","locationName":"Iowa","truckNumber":"4106","status":"In"}
+Sep 30, 2020 5:30:04 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 33
+Sep 30, 2020 5:30:04 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Neutral
+Sep 30, 2020 5:30:04 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":473}
+Sep 30, 2020 5:30:06 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989712","locationName":"Arizona","truckNumber":"5934","status":"In"}
+Sep 30, 2020 5:30:06 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 81
+Sep 30, 2020 5:30:06 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Reverse
+Sep 30, 2020 5:30:06 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":6660}
+Sep 30, 2020 5:30:08 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989706","locationName":"Alabama","truckNumber":"5796","status":"In"}
+Sep 30, 2020 5:30:08 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 4
+Sep 30, 2020 5:30:08 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Drive
+Sep 30, 2020 5:30:08 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":1811}
+Sep 30, 2020 5:30:10 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989742","locationName":"Wisconsin","truckNumber":"9402","status":"In"}
+Sep 30, 2020 5:30:10 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 26
+Sep 30, 2020 5:30:10 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Reverse
+Sep 30, 2020 5:30:10 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":205}
+Sep 30, 2020 5:30:12 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989727","locationName":"Iowa","truckNumber":"4938","status":"In"}
+Sep 30, 2020 5:30:12 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 2
+Sep 30, 2020 5:30:12 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Reverse
+Sep 30, 2020 5:30:12 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":5600}
+Sep 30, 2020 5:30:14 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601487008600","locationName":"Colardo","truckNumber":"473","status":"In"}
+Sep 30, 2020 5:30:14 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 4
+Sep 30, 2020 5:30:14 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Neutral
+Sep 30, 2020 5:30:14 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":7423}
+Sep 30, 2020 5:30:16 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601487006600","locationName":"Arizona","truckNumber":"1811","status":"In"}
+Sep 30, 2020 5:30:16 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 88
+Sep 30, 2020 5:30:16 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Reverse
+Sep 30, 2020 5:30:16 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":8007}
+Sep 30, 2020 5:30:18 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989737","locationName":"New Mexico","truckNumber":"5313","status":"In"}
+Sep 30, 2020 5:30:18 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 48
+Sep 30, 2020 5:30:18 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Drive
+Sep 30, 2020 5:30:18 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":6332}
+Sep 30, 2020 5:30:20 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989748","locationName":"South Dakota","truckNumber":"4905","status":"In"}
+Sep 30, 2020 5:30:20 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 65
+Sep 30, 2020 5:30:20 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Reverse
+Sep 30, 2020 5:30:20 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":4905}
+Sep 30, 2020 5:30:22 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989720","locationName":"Colardo","truckNumber":"205","status":"In"}
+Sep 30, 2020 5:30:22 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 3
+Sep 30, 2020 5:30:22 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Neutral
+Sep 30, 2020 5:30:22 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":3106}
+Sep 30, 2020 5:30:24 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486996598","locationName":"Arizona","truckNumber":"2550","status":"In"}
+Sep 30, 2020 5:30:24 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 1
+Sep 30, 2020 5:30:24 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Neutral
+Sep 30, 2020 5:30:24 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":4086}
+Sep 30, 2020 5:30:26 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989736","locationName":"Pennsylvania","truckNumber":"9237","status":"In"}
+Sep 30, 2020 5:30:26 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 17
+Sep 30, 2020 5:30:26 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Drive
+Sep 30, 2020 5:30:26 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":3720}
+Sep 30, 2020 5:30:28 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601487016601","locationName":"Illinois","truckNumber":"157","status":"In"}
+Sep 30, 2020 5:30:28 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 35
+Sep 30, 2020 5:30:28 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Drive
+Sep 30, 2020 5:30:28 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":9237}
+Sep 30, 2020 5:30:30 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989740","locationName":"Colardo","truckNumber":"3106","status":"In"}
+Sep 30, 2020 5:30:30 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: -2
+Sep 30, 2020 5:30:30 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Drive
+Sep 30, 2020 5:30:30 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":4106}
+Sep 30, 2020 5:30:32 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989688","locationName":"Colardo","truckNumber":"205","status":"In"}
+Sep 30, 2020 5:30:32 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 57
+Sep 30, 2020 5:30:32 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Drive
+Sep 30, 2020 5:30:32 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":1811}
+Sep 30, 2020 5:30:34 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989705","locationName":"Florida","truckNumber":"9237","status":"In"}
+Sep 30, 2020 5:30:34 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 90
+Sep 30, 2020 5:30:34 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Drive
+Sep 30, 2020 5:30:34 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":1869}
+Sep 30, 2020 5:30:36 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: check-in message: {"reservationId":"1601486989742","locationName":"Tennessee","truckNumber":"473","status":"In"}
+Sep 30, 2020 5:30:36 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: fuel-level message: 43
+Sep 30, 2020 5:30:36 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: gear-position message: Neutral
+Sep 30, 2020 5:30:36 PM com.getsimplex.steptimer.service.KafkaKeyValueTopicProducerActor onReceive
+INFO: Sending to Kafka Topic: vehicle-status message: {"topic":"vehicle-status","key":4905}

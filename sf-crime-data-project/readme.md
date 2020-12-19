@@ -10,7 +10,7 @@
 
 ## Start Kafka
 - all default setting
->bin/zookeeper-server-start.sh config/zookeeper.properties
+>bin/zookeeper-server-start.sh config/zookeeper.properties  
 >bin/kafka-server-start.sh config/server.properties
 
 ## Produce
@@ -18,21 +18,31 @@
 
 ## Consume
 ### using python code
->python consumer_server.py
+>python consumer_server.py  
+
 ![img](./images/consumer-server.jpg)
 
 ### using console command
->bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic sf.police.called --from-beginning
+>bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic sf.police.called --from-beginning  
+
 ![img](./images/consumer-console.jpg)
 
 ## Spark-submit
 - Below is the command I used since different installations were used
 >spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.1 --master local[*] data_stream.py
+
 - But I believe below command that the course provides still works
->spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_stream.py
+>spark-submit --packages org.apache.spark:spark-sql-kafka-0-10_2.11:2.3.4 --master local[*] data_stream.py  
+
 ![img](./images/sparksubmit.jpg)
 
 ## Spark UI
+- Job Tab
+![img](./images/sparkui_job.jpg)
+- Stage Tab
+![img](./images/sparkui_stage.jpg)
+- Executor Tab
+![img](./images/sparkui_executor.jpg)
 - Kafka Topic with the Number of Partition = 1, SparkSession maxRatePerPartition = 10, maxOffsetsPerTrigger = 200
 ![img](./images/partition1.jpg)
 - Kafka Topic with the Number of Partition = 3, SparkSession maxRatePerPartition = 10, maxOffsetsPerTrigger = 200
